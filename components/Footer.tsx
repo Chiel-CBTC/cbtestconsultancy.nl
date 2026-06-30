@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import React from 'react'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -12,7 +13,7 @@ export default function Footer() {
           <p className="text-text-muted text-sm">Arnhem, Netherlands</p>
         </div>
 
-        <nav className="flex flex-wrap gap-6 text-sm text-text-muted">
+        <nav className="flex items-center gap-3 text-sm text-text-muted">
           {[
             { href: '/', label: 'Home' },
             { href: '/portfolio', label: 'Portfolio' },
@@ -20,10 +21,13 @@ export default function Footer() {
             { href: '/blog', label: 'Blog' },
             { href: '/contact', label: 'Contact' },
             { href: '/disclaimer', label: 'Disclaimer' },
-          ].map(({ href, label }) => (
-            <Link key={href} href={href} className="hover:text-accent transition-colors">
-              {label}
-            </Link>
+          ].map(({ href, label }, i, arr) => (
+            <React.Fragment key={href}>
+              <Link href={href} className="hover:text-accent transition-colors">
+                {label}
+              </Link>
+              {i < arr.length - 1 && <span className="text-text-muted opacity-30">|</span>}
+            </React.Fragment>
           ))}
         </nav>
 

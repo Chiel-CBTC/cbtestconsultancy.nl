@@ -3,7 +3,7 @@ import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
-  description: 'Disclaimer en aansprakelijkheidsinformatie voor CB Test Consultancy.',
+  description: 'Disclaimer and liability information for CB Test Consultancy.',
 }
 
 export default function DisclaimerPage() {
@@ -15,48 +15,47 @@ export default function DisclaimerPage() {
         <div className="flex flex-col gap-12 text-text-primary text-lg leading-relaxed">
           <section>
             <h2 className="font-display font-bold text-text-primary text-2xl mb-4">
-              Aansprakelijkheid
+              Liability
             </h2>
             <p>
-              CB Test Consultancy besteedt de grootst mogelijke zorg aan de betrouwbaarheid en
-              actualiteit van de informatie op deze website. Onjuistheden kunnen echter voorkomen.
-              CB Test Consultancy is niet aansprakelijk voor schade die ontstaat als gevolg van
-              onjuistheid, onvolledigheid of onrechtmatigheid van de aangeboden informatie.
+              CB Test Consultancy takes the utmost care to ensure the reliability and accuracy of
+              the information on this website. However, inaccuracies may occur. CB Test Consultancy
+              accepts no liability for any damage resulting from inaccurate, incomplete or unlawful
+              information on this website.
             </p>
           </section>
 
           <section>
             <h2 className="font-display font-bold text-text-primary text-2xl mb-4">
-              Intellectueel eigendom
+              Intellectual property
             </h2>
             <p>
-              De inhoud van deze website — waaronder teksten, afbeeldingen en vormgeving — is
-              eigendom van CB Test Consultancy, tenzij anders aangegeven. Niets van deze website
-              mag worden verveelvoudigd, opgeslagen in een geautomatiseerd gegevensbestand of
-              openbaar gemaakt zonder voorafgaande schriftelijke toestemming.
+              All content on this website — including texts, images and design — is the property of
+              CB Test Consultancy, unless stated otherwise. Nothing on this website may be
+              reproduced, stored in an automated data system or made public without prior written
+              permission.
             </p>
           </section>
 
           <section>
             <h2 className="font-display font-bold text-text-primary text-2xl mb-4">
-              Externe links
+              External links
             </h2>
             <p>
-              Deze website kan links bevatten naar externe websites. CB Test Consultancy is niet
-              verantwoordelijk voor de inhoud van deze externe websites en aanvaardt geen
-              aansprakelijkheid voor eventuele schade die voortvloeit uit het gebruik ervan.
+              This website may contain links to external websites. CB Test Consultancy is not
+              responsible for the content of these external websites and accepts no liability for
+              any damage arising from their use.
             </p>
           </section>
 
           <section>
             <h2 className="font-display font-bold text-text-primary text-2xl mb-4">
-              Wijzigingen
+              Changes
             </h2>
             <p>
-              CB Test Consultancy behoudt zich het recht voor de inhoud van deze website op elk
-              moment te wijzigen zonder voorafgaande aankondiging. Het verdient aanbeveling
-              periodiek te controleren of de op deze website aangeboden informatie, inclusief
-              deze disclaimer, is gewijzigd.
+              CB Test Consultancy reserves the right to modify the content of this website at any
+              time without prior notice. We recommend checking periodically whether the information
+              on this website, including this disclaimer, has been updated.
             </p>
           </section>
         </div>

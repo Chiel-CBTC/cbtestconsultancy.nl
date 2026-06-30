@@ -15,8 +15,8 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1 }}
-        animate={{ scale: reduced ? 1 : 1.08 }}
-        transition={{ duration: reduced ? 0 : 12, ease: 'linear' }}
+        animate={{ scale: reduced ? 1 : 1.15 }}
+        transition={{ duration: reduced ? 0 : 8, ease: 'linear' }}
       >
         <Image
           src="/images/poster-2.avif"
