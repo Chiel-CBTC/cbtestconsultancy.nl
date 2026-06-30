@@ -63,7 +63,7 @@ export default function Hero() {
                 key={inset}
                 className="absolute rounded-full border border-accent"
                 style={{
-                  inset,
+                  inset: `${inset}px`,
                   opacity: 0.1 + i * 0.1,
                 }}
               />
