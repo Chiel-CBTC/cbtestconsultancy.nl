@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import { getAllPosts, getPostBySlug } from '@/lib/blog'
+import PageHeader from '@/components/PageHeader'
 
 interface PageProps {
   params: { slug: string }
@@ -34,8 +35,10 @@ export default function BlogPostPage({ params }: PageProps) {
   })
 
   return (
-    <div className="bg-background min-h-screen pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
+    <>
+      <PageHeader title={post.title} />
+      <div className="bg-background pb-24">
+        <div className="max-w-3xl mx-auto px-6 pt-12">
         <Link
           href="/blog"
           className="text-text-muted text-sm font-mono hover:text-accent transition-colors mb-12 inline-block"
@@ -43,16 +46,11 @@ export default function BlogPostPage({ params }: PageProps) {
           ← All posts
         </Link>
 
-        <header className="mb-12">
-          <div className="flex items-center gap-4 text-text-muted text-sm mb-6">
-            <time dateTime={post.date}>{formatted}</time>
-            <span>·</span>
-            <span>{post.readingTime}</span>
-          </div>
-          <h1 className="font-display font-bold text-text-primary text-4xl md:text-5xl leading-tight">
-            {post.title}
-          </h1>
-        </header>
+        <div className="flex items-center gap-4 text-text-muted text-sm mb-12">
+          <time dateTime={post.date}>{formatted}</time>
+          <span>·</span>
+          <span>{post.readingTime}</span>
+        </div>
 
         <div className="prose-dark">
           <MDXRemote
@@ -80,7 +78,8 @@ export default function BlogPostPage({ params }: PageProps) {
             ))}
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

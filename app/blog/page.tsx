@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import BlogPostCard from '@/components/BlogPostCard'
+import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -11,12 +12,10 @@ export default function BlogPage() {
   const posts = getAllPosts()
 
   return (
-    <div className="bg-background min-h-screen pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-16 text-balance">
-          Thoughts on QA
-        </h1>
-
+    <>
+      <PageHeader title="Thoughts on QA" subtitle="QA insights, Playwright patterns, and AI testing strategies." />
+      <div className="bg-background pb-24">
+        <div className="max-w-3xl mx-auto px-6 pt-16">
         {posts.length === 0 ? (
           <p className="text-text-muted text-xl">Posts coming soon.</p>
         ) : (
@@ -26,7 +25,8 @@ export default function BlogPage() {
             ))}
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

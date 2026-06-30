@@ -14,14 +14,14 @@ export default function Nav() {
   const pathname = usePathname()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-surface">
       <nav className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/cbtc-logo.png"
             alt="CB Test Consultancy"
-            className="h-16 w-auto"
+            className="h-20 w-auto"
           />
         </Link>
 
@@ -33,7 +33,7 @@ export default function Nav() {
                 className={`text-sm font-medium transition-colors ${
                   pathname === href
                     ? 'text-accent'
-                    : 'text-gray-500 hover:text-gray-900'
+                    : 'text-text-muted hover:text-text-primary'
                 }`}
               >
                 {label}

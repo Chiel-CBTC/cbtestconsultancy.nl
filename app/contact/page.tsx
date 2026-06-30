@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -7,14 +8,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-background min-h-screen pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <>
+      <PageHeader title="Let's work together." subtitle="Open to new QA consulting assignments — reach out directly." />
+      <div className="bg-background pb-24">
+        <div className="max-w-7xl mx-auto px-6 pt-16">
         <div className="grid md:grid-cols-2 gap-24 items-start">
           {/* Left: contact info */}
           <div>
-            <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-16 text-balance">
-              Let&apos;s work together.
-            </h1>
 
             <div className="flex flex-col gap-10">
               <div>
@@ -62,7 +62,8 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

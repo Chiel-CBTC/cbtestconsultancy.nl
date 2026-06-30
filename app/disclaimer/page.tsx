@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
@@ -7,12 +8,10 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <div className="bg-background min-h-screen pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-16 text-balance">
-          Disclaimer
-        </h1>
-
+    <>
+      <PageHeader title="Disclaimer" />
+      <div className="bg-background pb-24">
+        <div className="max-w-3xl mx-auto px-6 pt-16">
         <div className="flex flex-col gap-12 text-text-primary text-lg leading-relaxed">
           <section>
             <h2 className="font-display font-bold text-text-primary text-2xl mb-4">
@@ -61,7 +60,8 @@ export default function DisclaimerPage() {
             </p>
           </section>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

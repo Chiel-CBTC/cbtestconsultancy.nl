@@ -8,15 +8,22 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
-      {/* Background image */}
-      <Image
-        src="/images/poster.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-        aria-hidden
-      />
+      {/* Background image with slow zoom */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1 }}
+        animate={{ scale: reduced ? 1 : 1.08 }}
+        transition={{ duration: reduced ? 0 : 12, ease: 'linear' }}
+      >
+        <Image
+          src="/images/poster-2.avif"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          aria-hidden
+        />
+      </motion.div>
       {/* Dark overlay for text readability */}
       <div
         aria-hidden
@@ -53,7 +60,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/portfolio"
-              className="inline-block border border-white text-white px-8 py-4 font-semibold text-lg hover:bg-white hover:text-background transition-colors text-center"
+              className="inline-block border border-white text-white px-8 py-4 font-semibold text-lg hover:bg-white/20 transition-colors text-center"
             >
               View work
             </Link>

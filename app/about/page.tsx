@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -19,12 +20,10 @@ const certs = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-background min-h-screen pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-20 max-w-xl text-balance">
-          Chiel Bleumink
-        </h1>
-
+    <>
+      <PageHeader title="Chiel Bleumink" subtitle="Senior QA consultant — 17+ years in finance, retail, energy, and government." />
+      <div className="bg-background pb-24">
+        <div className="max-w-7xl mx-auto px-6 pt-16">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           {/* Photo column */}
           <div className="flex flex-col gap-8">
@@ -99,7 +98,8 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

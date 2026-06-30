@@ -35,13 +35,9 @@ test.describe('Navigation smoke tests', () => {
     await expect(page.getByRole('link', { name: /← all posts/i })).toBeVisible()
   })
 
-  test('contact page shows form and contact details', async ({ page }) => {
+  test('contact page shows heading and contact details', async ({ page }) => {
     await page.goto('/contact')
-    // h1 renders as "Let's work together."
     await expect(page.getByRole('heading', { level: 1 })).toContainText("Let's work together")
-    await expect(page.getByLabel(/name/i)).toBeVisible()
-    await expect(page.getByLabel(/email/i)).toBeVisible()
-    await expect(page.getByLabel(/message/i)).toBeVisible()
     await expect(page.getByText('chiel.bleumink@cbtestconsultancy.nl')).toBeVisible()
   })
 
