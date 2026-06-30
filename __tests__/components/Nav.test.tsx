@@ -12,7 +12,7 @@ describe('Nav', () => {
     expect(screen.getByRole('link', { name: /portfolio/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /about/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /blog/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /contact/i })[0]).toBeInTheDocument()
   })
 
   it('renders the logo / brand name', () => {

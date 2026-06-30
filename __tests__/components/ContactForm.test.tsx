@@ -6,7 +6,12 @@ global.fetch = vi.fn()
 
 describe('ContactForm', () => {
   beforeEach(() => {
+    vi.stubEnv('NEXT_PUBLIC_FORMSPREE_ENDPOINT', 'https://formspree.io/f/test')
     vi.mocked(fetch).mockResolvedValue(new Response(null, { status: 200 }))
+  })
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
   })
 
   it('renders all form fields', () => {

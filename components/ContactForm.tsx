@@ -5,16 +5,32 @@ type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
+  const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  if (!endpoint) {
+    return (
+      <div className="bg-surface border border-surface p-8 text-center">
+        <p className="text-text-muted">
+          Configuration error — contact me directly at{' '}
+          <a
+            href="mailto:chiel.bleumink@cbtestconsultancy.nl"
+            className="text-accent hover:underline"
+          >
+            chiel.bleumink@cbtestconsultancy.nl
+          </a>
+        </p>
+      </div>
+    )
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setState('submitting')
 
     const formData = new FormData(e.currentTarget)
 
     try {
-      const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT
-      const res = await fetch(endpoint!, {
+      const res = await fetch(endpoint, {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' },

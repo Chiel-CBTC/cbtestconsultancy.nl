@@ -40,11 +40,9 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* Mobile: simple contact CTA — aria-hidden because /contact already in nav list */}
+        {/* Mobile: Contact CTA visible only on small screens */}
         <Link
           href="/contact"
-          aria-hidden="true"
-          tabIndex={-1}
           className="md:hidden text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-background transition-colors"
         >
           Contact
