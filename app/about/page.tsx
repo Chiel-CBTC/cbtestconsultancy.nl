@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <div className="bg-background min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase mb-4">
+        <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">
           About
         </p>
         <h1 className="font-display font-bold text-white text-5xl md:text-6xl mb-20 max-w-xl">
