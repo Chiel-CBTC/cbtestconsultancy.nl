@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Fontsource imports */
+@import '@fontsource/syne/600.css';
+@import '@fontsource/syne/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    @apply bg-background text-text-primary;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-dim;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* MDX prose styles used in blog posts */
+@layer components {
+  .prose-dark h1,
+  .prose-dark h2,
+  .prose-dark h3,
+  .prose-dark h4 {
+    @apply font-display font-bold text-white;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .prose-dark h1 { @apply text-4xl mt-12 mb-6; }
+  .prose-dark h2 { @apply text-3xl mt-10 mb-4; }
+  .prose-dark h3 { @apply text-2xl mt-8 mb-3; }
+
+  .prose-dark p {
+    @apply text-text-primary leading-relaxed mb-6;
+  }
+
+  .prose-dark a {
+    @apply text-accent underline hover:text-accent-dim transition-colors;
+  }
+
+  .prose-dark ul,
+  .prose-dark ol {
+    @apply text-text-primary mb-6 pl-6;
+  }
+
+  .prose-dark li {
+    @apply mb-2;
+  }
+
+  .prose-dark ul li {
+    @apply list-disc;
+  }
+
+  .prose-dark ol li {
+    @apply list-decimal;
+  }
+
+  .prose-dark blockquote {
+    @apply border-l-4 border-accent pl-6 italic text-text-muted my-8;
+  }
+
+  /* rehype-pretty-code output */
+  .prose-dark pre {
+    @apply rounded-none border border-surface my-8 overflow-x-auto;
+  }
+
+  .prose-dark pre code {
+    @apply text-sm leading-relaxed;
+  }
+
+  .prose-dark :not(pre) > code {
+    @apply bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono;
   }
 }
