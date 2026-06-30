@@ -11,9 +11,6 @@ export default function ClientLogoStrip() {
   return (
     <section className="border-y border-surface py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-text-muted text-sm font-mono tracking-widest uppercase text-center mb-10">
-          Trusted by
-        </p>
         <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
           {clients.map(({ name }) => (
             <span

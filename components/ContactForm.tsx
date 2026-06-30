@@ -44,7 +44,7 @@ export default function ContactForm() {
   if (state === 'success') {
     return (
       <div className="bg-surface border border-accent p-8 text-center">
-        <p className="font-display font-bold text-white text-xl mb-2">Message sent ✓</p>
+        <p className="font-display font-bold text-text-primary text-xl mb-2">Message sent ✓</p>
         <p className="text-text-muted">I&apos;ll get back to you as soon as possible.</p>
       </div>
     )
@@ -98,7 +98,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="bg-accent text-background px-8 py-4 font-semibold text-lg hover:bg-accent-dim transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
+        className="bg-accent text-white px-8 py-4 font-semibold text-lg hover:bg-accent-dim transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
       >
         {state === 'submitting' ? 'Sending…' : 'Send message →'}
       </button>

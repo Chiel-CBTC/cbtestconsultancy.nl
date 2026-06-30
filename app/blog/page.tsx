@@ -13,8 +13,7 @@ export default function BlogPage() {
   return (
     <div className="bg-background min-h-screen pt-32 pb-24">
       <div className="max-w-3xl mx-auto px-6">
-        <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase mb-4">Blog</p>
-        <h1 className="font-display font-bold text-white text-5xl md:text-6xl mb-16">
+        <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-16 text-balance">
           Thoughts on QA
         </h1>
 

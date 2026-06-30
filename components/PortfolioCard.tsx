@@ -9,7 +9,7 @@ export default function PortfolioCard({ client, sector, blurb, tags }: Portfolio
   return (
     <div className="bg-surface border border-surface hover:border-accent transition-colors p-8 flex flex-col gap-6">
       <div className="flex items-start justify-between gap-4">
-        <h3 className="font-display font-bold text-white text-xl">{client}</h3>
+        <h3 className="font-display font-bold text-text-primary text-xl">{client}</h3>
         <span className="text-xs font-mono tracking-widest uppercase text-accent border border-accent px-2 py-1 whitespace-nowrap">
           {sector}
         </span>

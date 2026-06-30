@@ -55,10 +55,7 @@ export default function PortfolioPage() {
   return (
     <div className="bg-background min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase mb-4">
-          Portfolio
-        </p>
-        <h1 className="font-display font-bold text-white text-5xl md:text-6xl mb-6 max-w-2xl">
+        <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-6 max-w-2xl text-balance">
           Clients &amp; work
         </h1>
         <p className="text-text-muted text-xl max-w-2xl mb-16 leading-relaxed">

@@ -44,12 +44,12 @@ export default function BlogPostPage({ params }: PageProps) {
         </Link>
 
         <header className="mb-12">
-          <div className="flex items-center gap-4 text-text-muted font-mono text-xs tracking-widest uppercase mb-6">
+          <div className="flex items-center gap-4 text-text-muted text-sm mb-6">
             <time dateTime={post.date}>{formatted}</time>
             <span>·</span>
             <span>{post.readingTime}</span>
           </div>
-          <h1 className="font-display font-bold text-white text-4xl md:text-5xl leading-tight">
+          <h1 className="font-display font-bold text-text-primary text-4xl md:text-5xl leading-tight">
             {post.title}
           </h1>
         </header>

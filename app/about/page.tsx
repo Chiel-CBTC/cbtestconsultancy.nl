@@ -21,10 +21,7 @@ export default function AboutPage() {
   return (
     <div className="bg-background min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">
-          About
-        </p>
-        <h1 className="font-display font-bold text-white text-5xl md:text-6xl mb-20 max-w-xl">
+        <h1 className="font-display font-bold text-text-primary text-5xl md:text-6xl mb-20 max-w-xl text-balance">
           Chiel Bleumink
         </h1>
 
@@ -41,15 +38,13 @@ export default function AboutPage() {
 
             {/* Certs */}
             <div>
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">
-                Certifications
-              </p>
+              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Certifications</p>
               <div className="flex flex-wrap gap-3">
                 {certs.map(({ name, abbr }) => (
                   <div
                     key={abbr}
                     title={name}
-                    className="border border-accent text-accent font-mono text-sm px-4 py-2 hover:bg-accent hover:text-background transition-colors cursor-default"
+                    className="border border-accent text-accent font-mono text-sm px-4 py-2 hover:bg-accent hover:text-white transition-colors cursor-default"
                   >
                     {abbr}
                   </div>
@@ -84,9 +79,7 @@ export default function AboutPage() {
 
             {/* Skills */}
             <div>
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-6">
-                Skills &amp; tooling
-              </p>
+              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-6">Skills &amp; tooling</p>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <span
@@ -101,9 +94,7 @@ export default function AboutPage() {
 
             {/* Education */}
             <div>
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">
-                Education
-              </p>
+              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Education</p>
               <p className="text-text-muted">HTS Technical Computer Science</p>
             </div>
           </div>

@@ -23,11 +23,12 @@
 | Framework | Next.js 14 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS v3 |
-| Blog | MDX via `@next/mdx` or `next-mdx-remote` |
+| Blog | MDX via `@next/mdx` (App Router native) |
 | Syntax highlight | Shiki |
 | Contact form | Formspree free tier (50 submissions/month) |
 | Deployment | `output: 'export'` → upload `out/` to existing host |
 | Fonts | Syne (headings) + Inter (body) via Fontsource |
+| Animations | Framer Motion (minimal — page transitions + card reveals only) |
 
 ---
 
@@ -124,7 +125,7 @@ _Copy for each blurb to be written by Chiel — spec sets the structure._
 
 **Split layout** (desktop: 50/50; mobile: stacked)
 
-Left: professional photo.
+Left: professional photo. If no photo is available at build time, use an abstract geometric avatar placeholder with cyan accent — not a broken image.
 
 Right:
 - Punchy bio (2–3 paragraphs)
