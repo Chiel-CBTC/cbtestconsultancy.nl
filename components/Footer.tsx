@@ -19,6 +19,7 @@ export default function Footer() {
             { href: '/about', label: 'About' },
             { href: '/blog', label: 'Blog' },
             { href: '/contact', label: 'Contact' },
+            { href: '/disclaimer', label: 'Disclaimer' },
           ].map(({ href, label }) => (
             <Link key={href} href={href} className="hover:text-accent transition-colors">
               {label}

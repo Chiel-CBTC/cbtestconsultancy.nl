@@ -56,7 +56,7 @@ Global metadata defaults:
 
 Three columns (flex row on md+, column on mobile):
 1. Company info: CB Test Consultancy, Chiel Bleumink · KvK 09217715, Arnhem, Netherlands
-2. Nav links: Home, Portfolio, About, Blog, Contact (all `hover:text-accent`)
+2. Nav links: Home, Portfolio, About, Blog, Contact, Disclaimer (all `hover:text-accent`)
 3. Copyright: © {year}
 
 Styling: `border-t border-surface bg-background`, padding `py-12`
