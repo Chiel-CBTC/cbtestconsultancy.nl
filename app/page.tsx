@@ -58,7 +58,7 @@ export default function HomePage() {
       {/* Service pillars */}
       <section className="bg-background py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display font-bold text-text-primary text-4xl md:text-5xl mb-16 whitespace-nowrap">
+          <h2 className="font-display font-bold text-text-primary text-4xl md:text-5xl mb-16 md:whitespace-nowrap">
             Quality baked in, not bolted on
           </h2>
           <div className="grid md:grid-cols-3 gap-6">

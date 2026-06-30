@@ -11,7 +11,7 @@ export default function DisclaimerPage() {
     <>
       <PageHeader title="Disclaimer" />
       <div className="bg-background pb-24">
-        <div className="max-w-3xl mx-auto px-6 pt-16">
+        <div className="max-w-3xl mx-auto px-6 pt-8 md:pt-16">
         <div className="flex flex-col gap-12 text-text-primary text-lg leading-relaxed">
           <section>
             <h2 className="font-display font-bold text-text-primary text-2xl mb-4">

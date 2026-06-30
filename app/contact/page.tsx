@@ -12,8 +12,8 @@ export default function ContactPage() {
     <>
       <PageHeader title="Let's work together" />
       <div className="bg-background pb-24">
-        <div className="max-w-7xl mx-auto px-6 pt-16">
-        <div className="grid md:grid-cols-2 gap-24 items-start">
+        <div className="max-w-7xl mx-auto px-6 pt-8 md:pt-16">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
           {/* Left: contact info */}
           <div>
 

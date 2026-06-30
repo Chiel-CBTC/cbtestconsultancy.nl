@@ -24,8 +24,8 @@ export default function AboutPage() {
     <>
       <PageHeader title="Chiel Bleumink" subtitle="Senior QA Consultant" />
       <div className="bg-background pb-24">
-        <div className="max-w-7xl mx-auto px-6 pt-16">
-        <div className="grid md:grid-cols-2 gap-20 items-start">
+        <div className="max-w-7xl mx-auto px-6 pt-8 md:pt-16">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Photo column */}
           <div className="flex flex-col gap-8">
             <div className="relative aspect-[3/4] max-w-sm overflow-hidden bg-surface">

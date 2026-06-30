@@ -42,7 +42,7 @@ export default function Hero() {
           <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase mb-8">
             QA Consulting · Playwright · AI Testing
           </p>
-          <h1 className="font-display font-bold text-white text-6xl md:text-7xl leading-[1.05] mb-8 text-balance">
+          <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8 text-balance">
             Testing at the{' '}
             <span className="text-accent">speed</span>{' '}
             of modern teams

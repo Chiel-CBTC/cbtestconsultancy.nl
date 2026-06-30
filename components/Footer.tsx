@@ -13,7 +13,7 @@ export default function Footer() {
           <p className="text-text-muted text-sm">Arnhem, Netherlands</p>
         </div>
 
-        <nav className="flex items-center gap-3 text-sm text-text-muted">
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
           {[
             { href: '/', label: 'Home' },
             { href: '/portfolio', label: 'Portfolio' },

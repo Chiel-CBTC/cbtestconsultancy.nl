@@ -11,18 +11,20 @@ const clients = [
 
 export default function ClientLogoStrip() {
   return (
-    <section className="border-y border-surface py-16 bg-background">
+    <section className="bg-background">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-6">
+        <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase text-center">Clients I&apos;ve worked with</p>
+      </div>
+      <div className="border-y border-surface py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase mb-10 text-center">Clients I&apos;ve worked with</p>
-        <div className="grid grid-cols-3 gap-x-12 gap-y-10 items-center justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-10 items-center justify-items-center">
           {clients.map(({ name, img, url, w, h }) => (
             <a
               key={name}
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center transition-transform duration-300 hover:scale-110"
-              style={{ width: w, height: h }}
+              className="flex items-center justify-center w-full py-3 transition-transform duration-300 hover:scale-110"
               aria-label={name}
             >
               {img ? (
@@ -31,7 +33,8 @@ export default function ClientLogoStrip() {
                   alt={name}
                   height={h}
                   width={w}
-                  className="max-h-full max-w-full w-auto h-auto object-contain"
+                  className="w-auto h-auto max-w-full object-contain"
+                  style={{ maxWidth: w, maxHeight: h }}
                 />
               ) : (
                 <span className="text-text-muted font-display font-semibold text-lg">
@@ -41,6 +44,7 @@ export default function ClientLogoStrip() {
             </a>
           ))}
         </div>
+      </div>
       </div>
     </section>
   )

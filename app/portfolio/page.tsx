@@ -66,7 +66,7 @@ export default function PortfolioPage() {
         subtitle="Over the years I supported finance, retail, energy and government teams shipping flawless digital products"
       />
       <div className="bg-background pb-24">
-        <div className="max-w-7xl mx-auto px-6 pt-16">
+        <div className="max-w-7xl mx-auto px-6 pt-8 md:pt-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {clients.map((c) => (
             <PortfolioCard key={c.client} {...c} />
