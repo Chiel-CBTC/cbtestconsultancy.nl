@@ -33,7 +33,7 @@ test.describe('Home page', () => {
       await expect(page.getByRole('link', { name: 'TenneT' })).toBeVisible()
       await expect(page.getByRole('link', { name: 'Action' })).toBeVisible()
       await expect(page.getByRole('link', { name: 'Europarcs' })).toBeVisible()
-      await expect(page.getByRole('link', { name: 'Gadero' })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'Zwijsen' })).toBeVisible()
       await expect(page.getByRole('link', { name: 'Provincie Gelderland' })).toBeVisible()
     })
   })

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
 const clients = [
+  { name: 'Zwijsen', img: '/images/clients/zwijsen.svg', url: 'https://www.zwijsen.nl', w: 240, h: 80 },
   { name: 'Action', img: '/images/clients/action.png', url: 'https://www.action.com', w: 300, h: 130 },
   { name: 'Europarcs', img: '/images/clients/europarcs.png', url: 'https://www.europarcs.nl', w: 220, h: 90 },
-  { name: 'Gadero', img: '/images/clients/gadero.png', url: 'https://www.gadero.nl', w: 220, h: 90 },
   { name: 'TenneT', img: '/images/clients/tennet.png', url: 'https://www.tennet.eu', w: 260, h: 110 },
   { name: 'Rabobank', img: '/images/clients/rabobank.png', url: 'https://www.rabobank.nl', w: 300, h: 130 },
   { name: 'Provincie Gelderland', img: '/images/clients/gelderland.png', url: 'https://www.gelderland.nl', w: 220, h: 90 },

@@ -12,16 +12,16 @@ test.describe('Navigation', () => {
   test('all five nav links are present', async ({ page }) => {
     const nav = page.locator('header nav')
     await expect(nav.getByRole('link', { name: 'Home' })).toBeVisible()
-    await expect(nav.getByRole('link', { name: 'Portfolio' })).toBeVisible()
+    await expect(nav.getByRole('link', { name: 'Clients' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'About' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'Blog' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'Contact' }).first()).toBeVisible()
   })
 
   test('active link highlights current page', async ({ page }) => {
-    await page.goto('/portfolio')
+    await page.goto('/clients')
     const nav = page.locator('header nav')
-    const portfolioLink = nav.getByRole('link', { name: 'Portfolio' })
-    await expect(portfolioLink).toHaveClass(/text-accent/)
+    const clientsLink = nav.getByRole('link', { name: 'Clients' })
+    await expect(clientsLink).toHaveClass(/text-accent/)
   })
 })

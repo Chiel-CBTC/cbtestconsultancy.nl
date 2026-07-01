@@ -3,11 +3,19 @@ import PortfolioCard from '@/components/PortfolioCard'
 import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
+  title: 'Clients',
   description: 'QA consulting work for Rabobank, TenneT, Action, and more.',
 }
 
 const clients = [
+  {
+    client: 'Zwijsen',
+    url: 'https://www.zwijsen.nl',
+    sector: 'Education',
+    blurb:
+      'QA lead for the digital learning platform used by primary schools nationwide. Responsible for test strategy and coaching the team on quality practices, alongside Playwright/TypeScript automation integrated into Azure DevOps CI/CD pipelines.',
+    tags: ['Playwright', 'TypeScript', 'Azure DevOps', 'Test Strategy', 'QA Lead'],
+  },
   {
     client: 'Action',
     url: 'https://www.action.com',
@@ -23,14 +31,6 @@ const clients = [
     blurb:
       'Led QA for a Microsoft Dynamics CRM rollout covering system and acceptance tests, exploratory testing and CodeceptJS/Playwright automation. Set up Azure DevOps CI/CD pipelines for daily regression runs with Testomat.io reporting.',
     tags: ['Playwright', 'CodeceptJS', 'Azure DevOps', 'MS Dynamics', 'CI/CD'],
-  },
-  {
-    client: 'Gadero',
-    url: 'https://www.gadero.nl',
-    sector: 'E-commerce',
-    blurb:
-      'Built a Playwright automation framework for the renewed website using the Page Object Model, and configured Checkly for continuous availability monitoring. Enabled the test team to work independently from day one.',
-    tags: ['Playwright', 'JavaScript', 'Page Object Model', 'Checkly', 'Vercel'],
   },
   {
     client: 'TenneT',
@@ -62,7 +62,7 @@ export default function PortfolioPage() {
   return (
     <>
       <PageHeader
-        title="Clients & work"
+        title="Clients"
         subtitle="Over the years I supported finance, retail, energy and government teams shipping flawless digital products"
       />
       <div className="bg-background pb-24">

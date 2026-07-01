@@ -1,0 +1,127 @@
+---
+title: "A Smart Job Alert System with N8N and AI"
+date: "2026-03-10"
+excerpt: "Automating my job search with N8N workflows that scan email and web sources, use Claude to evaluate matches against my profile, and only notify me when something's actually relevant."
+tags: ["n8n", "ai", "automation", "claude"]
+---
+
+I automated my job search through workflows that scan email and web sources hourly, using Claude AI
+to evaluate opportunities against my professional profile. Only relevant matches trigger an email
+notification.
+
+## What is N8N?
+
+<div className="split-row">
+<div>
+
+N8N is an open-source workflow automation platform for visually integrating services. You build
+automated sequences by connecting nodes — triggers, API calls, logic, and outputs — without building
+a complete application from scratch. It stands out through self-hosting capabilities and custom
+JavaScript support when the built-in nodes aren't enough.
+
+I run N8N via Docker on my own infrastructure, which keeps data local and avoids subscription
+constraints.
+
+</div>
+<div className="logo-stack">
+  <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/n8n-ai/n8n-logo.png" alt="N8N" /></a>
+  <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/n8n-ai/docker-logo.png" alt="Docker" /></a>
+</div>
+</div>
+
+## Core concept
+
+The system automates job listing collection from multiple sources, feeds opportunities to Claude for
+profile-matching analysis, and delivers filtered HTML emails. That eliminates manually scanning
+irrelevant postings that don't match on rate, location, or tech stack.
+
+## Implementation
+
+**Freelance.nl** — An hourly scheduled scan retrieves job alert emails from Gmail, extracts the URLs,
+fetches full job details through a GraphQL API call with an authenticated Bearer token, and routes
+each listing through Claude for evaluation.
+
+![Freelance.nl N8N flow](/images/blog/n8n-ai/freelance-nl-flow.png)
+
+**LinkedIn** — Since LinkedIn has no public job listing API, this workflow uses SerpAPI for Google job
+searches, processes results in parallel branches, evaluates matches through Claude, and sends
+individual emails for relevant positions.
+
+![LinkedIn N8N flow](/images/blog/n8n-ai/linkedin-flow.png)
+
+## Notion as the single source of truth
+
+<div className="split-row">
+<div>
+
+I initially ran into maintenance headaches with duplicated prompts and criteria across workflows.
+Using Notion as a centralized repository — housing my CV, profile information, matching criteria, and
+output instructions — meant a single update immediately propagates across all active flows.
+
+</div>
+<div className="logo-stack">
+  <a href="https://www.notion.com/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/n8n-ai/notion-logo.png" alt="Notion" /></a>
+</div>
+</div>
+
+## Claude's role
+
+<div className="split-row">
+<div>
+
+Claude serves as the evaluation engine: it receives the complete job description alongside my CV and
+specific matching instructions, and produces a structured assessment — match score, explanation, and
+recommendation — formatted as HTML-ready content. Prompt precision matters here: Claude applies the
+defined criteria while staying lenient except for fundamental mismatches.
+
+The system returns one of three verdicts — "Yes," "Doubt," or "No" — and only "Yes" or "Doubt" trigger
+an email.
+
+![Claude evaluation output](/images/blog/n8n-ai/claude-output.png)
+
+</div>
+<div className="logo-stack">
+  <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/n8n-ai/claude-logo.png" alt="Claude" /></a>
+</div>
+</div>
+
+## Technical challenges
+
+### GraphQL returns HTTP 200 on errors
+
+GraphQL returns HTTP 200 even on failure. Fixed with a custom Code node that detects error responses
+and manually throws an exception.
+
+### Gmail strips CSS
+
+Gmail strips `<style>` blocks entirely, so all styling had to move to inline CSS with table-based
+layouts.
+
+![Email header card](/images/blog/n8n-ai/email-header.png)
+
+### JSON string escaping
+
+Combining Notion data with job listings containing newlines and quotes corrupted the JSON structure.
+`JSON.stringify(prompt).slice(1, -1)` safely escapes special characters.
+
+### Multi-item processing
+
+The LinkedIn flow's batch results needed `$input.all().map()` instead of `$input.first()` to process
+every listing instead of just the first one.
+
+## Maintenance
+
+After processing freelance.nl alerts, N8N automatically labels the emails "processed by N8N" and marks
+them as read, keeping the inbox organized.
+
+## What's next
+
+- Real-time email triggering via IMAP IDLE connections
+- Full LinkedIn job description fetching for richer Claude context
+- Multi-user support, leveraging the existing Notion architecture
+- More job board sources with proactive monitoring
+
+## Conclusion
+
+It looked complex going in, but turned out to be a weekend project plus a few debugging sessions —
+now a background system that needs minimal ongoing attention while saving significant time.

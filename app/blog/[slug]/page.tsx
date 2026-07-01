@@ -38,7 +38,7 @@ export default function BlogPostPage({ params }: PageProps) {
     <>
       <PageHeader title={post.title} />
       <div className="bg-background pb-24">
-        <div className="max-w-3xl mx-auto px-6 pt-12">
+        <div className="max-w-7xl mx-auto px-6 pt-12">
         <Link
           href="/blog"
           className="text-text-muted text-sm font-mono hover:text-accent transition-colors mb-12 inline-block"

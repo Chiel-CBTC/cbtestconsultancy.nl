@@ -6,17 +6,17 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-surface bg-background">
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-start md:items-center gap-8">
         <div>
           <p className="font-display font-bold text-text-primary mb-1">CB Test Consultancy</p>
           <p className="text-text-muted text-sm">Chiel Bleumink · KvK 09217715</p>
           <p className="text-text-muted text-sm">Arnhem, Netherlands</p>
         </div>
 
-        <nav className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-text-muted justify-self-start md:justify-self-center">
           {[
             { href: '/', label: 'Home' },
-            { href: '/portfolio', label: 'Portfolio' },
+            { href: '/clients', label: 'Clients' },
             { href: '/about', label: 'About' },
             { href: '/blog', label: 'Blog' },
             { href: '/contact', label: 'Contact' },
@@ -31,7 +31,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        <p className="text-text-muted text-sm">© {year}</p>
+        <p className="text-text-muted text-sm justify-self-start md:justify-self-end">© {year}</p>
       </div>
     </footer>
   )

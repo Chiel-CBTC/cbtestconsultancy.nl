@@ -1,0 +1,65 @@
+---
+title: "Building a Playwright Test Framework with AI"
+date: "2026-02-17"
+excerpt: "How I built a Playwright/TypeScript test framework from scratch at Action, using AI as a co-pilot from day one — and got roughly 10x faster at writing test scripts."
+tags: ["playwright", "ai", "testing", "typescript"]
+---
+
+## Starting from scratch
+
+I started an assignment at Action in 2024 with no existing test framework. I set up a foundational
+Playwright setup using TypeScript, organized by project folders with a clear structure for
+maintainability.
+
+From the beginning I intentionally integrated AI into my workflow as a core working method, not an
+experiment. My primary tools were OpenCode, Claude Pro, and Claude Code — a powerful agentic coding
+assistant directly in my terminal.
+
+## AI as co-pilot
+
+The significant breakthrough came from using AI to generate test scripts directly from user stories.
+The workflow looked like this:
+
+1. Extract requirements from the user story
+2. Provide context to the AI tool
+3. Review and validate the generated code
+4. Execute and refine through iteration
+5. Deploy to production
+
+The generated code demonstrated strong quality — not merely correct syntax, but thoughtful structure
+and edge case consideration. Still, a critical insight stuck with me: I need to stay in the lead.
+AI produces quality output, but human expertise remains essential for verification and validation.
+
+## Structure that scales
+
+As the framework expanded, a few organizational principles kept it maintainable:
+
+- Individual project folders, kept clean
+- Tests grouped by category in separate files
+- User story identifiers embedded in test titles for full traceability
+
+![Anti-gravity Claude Code setup](/images/blog/playwright-ai/anti-gravity-claude-code.png)
+
+## The impact: 10x faster
+
+I reported roughly a tenfold acceleration in test script creation. That speed improvement
+fundamentally changed testing strategy — tasks that were previously too time-consuming became
+practical, enabling consistent automated regression testing after every change while freeing up
+capacity for exploratory testing and edge case discovery.
+
+## What I'd change
+
+Reflecting on the experience: start with AI even earlier. The combination of Playwright and AI is
+mature reality, not a theoretical future capability.
+
+## Conclusion
+
+My advice to QA professionals: embrace AI immediately. AI will make you enormously more effective,
+not obsolete. Use AI for everything, stay in the lead, and deliver better quality, faster.
+
+<div className="logo-row">
+  <a href="https://playwright.dev/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/playwright-ai/playwright.png" alt="Playwright" /></a>
+  <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/playwright-ai/claude.png" alt="Claude" /></a>
+  <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer"><img src="/images/blog/playwright-ai/claude-code.png" alt="Claude Code" /></a>
+  <a href="https://opencode.ai/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/playwright-ai/opencode.png" alt="OpenCode" /></a>
+</div>

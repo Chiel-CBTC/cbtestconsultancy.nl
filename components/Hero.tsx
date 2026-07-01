@@ -58,7 +58,7 @@ export default function Hero() {
               Let&apos;s talk →
             </Link>
             <Link
-              href="/portfolio"
+              href="/clients"
               className="inline-block border border-white text-white px-8 py-4 font-semibold text-lg hover:bg-white/20 transition-colors text-center"
             >
               View work
