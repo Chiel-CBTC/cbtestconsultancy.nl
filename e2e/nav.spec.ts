@@ -10,7 +10,7 @@ test.describe('Navigation', () => {
   })
 
   test('all five nav links are present', async ({ page }) => {
-    const nav = page.locator('nav')
+    const nav = page.locator('header nav')
     await expect(nav.getByRole('link', { name: 'Home' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'Portfolio' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'About' })).toBeVisible()
@@ -20,7 +20,7 @@ test.describe('Navigation', () => {
 
   test('active link highlights current page', async ({ page }) => {
     await page.goto('/portfolio')
-    const nav = page.locator('nav')
+    const nav = page.locator('header nav')
     const portfolioLink = nav.getByRole('link', { name: 'Portfolio' })
     await expect(portfolioLink).toHaveClass(/text-accent/)
   })

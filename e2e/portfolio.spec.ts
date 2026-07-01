@@ -13,19 +13,19 @@ test.describe('Portfolio page', () => {
   })
 
   test('shows sector badges', async ({ page }) => {
-    await expect(page.getByText('Finance')).toBeVisible()
-    await expect(page.getByText('Energy')).toBeVisible()
-    await expect(page.getByText('Retail')).toBeVisible()
-    await expect(page.getByText('Government')).toBeVisible()
+    await expect(page.getByText('Finance', { exact: true })).toBeVisible()
+    await expect(page.getByText('Energy', { exact: true })).toBeVisible()
+    await expect(page.getByText('Retail', { exact: true })).toBeVisible()
+    await expect(page.getByText('Government', { exact: true })).toBeVisible()
   })
 
   test('Rabobank card shows blurb and tags', async ({ page }) => {
-    await expect(page.getByText(/reducing regression cycles/i)).toBeVisible()
-    await expect(page.getByText('Playwright').first()).toBeVisible()
-    await expect(page.getByText('Azure DevOps')).toBeVisible()
+    await expect(page.getByText(/test strategy and execution/i)).toBeVisible()
+    await expect(page.getByText('Selenium').first()).toBeVisible()
+    await expect(page.getByText('Performance Testing')).toBeVisible()
   })
 
-  test('Provincie Gelderland card mentions accessibility', async ({ page }) => {
-    await expect(page.getByText(/WCAG accessibility/i)).toBeVisible()
+  test('Provincie Gelderland card mentions DevOps transition', async ({ page }) => {
+    await expect(page.getByText(/QA lead within government development teams/i)).toBeVisible()
   })
 })

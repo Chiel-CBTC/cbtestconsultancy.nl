@@ -10,17 +10,18 @@ test.describe('Contact page', () => {
   })
 
   test('shows email and phone links', async ({ page }) => {
-    await expect(page.getByRole('link', { name: /chiel.bleumink@cbtestconsultancy.nl/i })).toBeVisible()
+    await expect(page.getByRole('link', { name: /chiel@cbtestconsultancy.nl/i })).toBeVisible()
     await expect(page.getByRole('link', { name: /\+31/ })).toBeVisible()
   })
 
   test('shows location and KvK number', async ({ page }) => {
-    await expect(page.getByText('Arnhem, Netherlands')).toBeVisible()
-    await expect(page.getByText('KvK 09217715')).toBeVisible()
+    const main = page.locator('main')
+    await expect(main.getByText('Arnhem, Netherlands')).toBeVisible()
+    await expect(main.getByText('KvK 09217715')).toBeVisible()
   })
 
   test('shows availability card', async ({ page }) => {
-    await expect(page.getByText(/Available for projects/i)).toBeVisible()
-    await expect(page.getByText(/Open to new assignments/i)).toBeVisible()
+    await expect(page.getByText(/Currently on assignment/i)).toBeVisible()
+    await expect(page.getByText(/Available for small, focused engagements/i)).toBeVisible()
   })
 })
