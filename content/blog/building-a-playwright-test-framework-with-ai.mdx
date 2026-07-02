@@ -5,57 +5,89 @@ excerpt: "How I built a Playwright/TypeScript test framework from scratch at Act
 tags: ["playwright", "ai", "testing", "typescript"]
 ---
 
+When I started my assignment at Action in 2024, I had a blank canvas. No existing framework, no
+automation scripts, nothing. Just a codebase that needed quality assurance and a growing curiosity
+about AI-powered testing.
+
+What followed was one of the most eye-opening experiences in my 17+ year QA career.
+
 ## Starting from scratch
 
-I started an assignment at Action in 2024 with no existing test framework. I set up a foundational
-Playwright setup using TypeScript, organized by project folders with a clear structure for
-maintainability.
+I began with a basic Playwright setup. Nothing fancy — just the foundation. A clean project structure,
+TypeScript configuration, and a clear folder structure to keep projects separated and maintainable.
 
-From the beginning I intentionally integrated AI into my workflow as a core working method, not an
-experiment. My primary tools were OpenCode, Claude Pro, and Claude Code — a powerful agentic coding
-assistant directly in my terminal.
+From the start, I made a conscious choice to integrate AI into my workflow wherever possible. Not as an
+experiment, but as a serious working method. My tools of choice: OpenCode and Claude Pro — and more
+recently Claude Code, which integrates seamlessly with my existing Claude Pro subscription and gives me
+a powerful agentic coding assistant directly in my terminal.
 
-## AI as co-pilot
+## AI as my co-pilot
 
-The significant breakthrough came from using AI to generate test scripts directly from user stories.
-The workflow looked like this:
+The real shift happened when I started using OpenCode to generate test scripts directly from user
+stories.
 
-1. Extract requirements from the user story
-2. Provide context to the AI tool
-3. Review and validate the generated code
-4. Execute and refine through iteration
-5. Deploy to production
+The workflow became:
 
-The generated code demonstrated strong quality — not merely correct syntax, but thoughtful structure
-and edge case consideration. Still, a critical insight stuck with me: I need to stay in the lead.
-AI produces quality output, but human expertise remains essential for verification and validation.
+1. Take a user story
+2. Feed it to OpenCode/Claude
+3. Review and validate the generated test code
+4. Test it, iterate where needed
+5. Ship it
+
+What surprised me most was the quality of the generated code. It wasn't just syntactically correct — it
+was well-structured, readable, and often caught edge cases I hadn't explicitly defined. Even more
+impressive: AI's ability to detect errors in its own output and automatically correct them.
+
+One thing I learned quickly: I need to stay in the lead!
+
+AI generates great code, but you still need to verify that it does exactly what you want. The human
+judgment, the domain knowledge, the QA expertise — that remains essential. AI amplifies it, it doesn't
+replace it.
 
 ## Structure that scales
 
-As the framework expanded, a few organizational principles kept it maintainable:
+As the framework grew, I refined the structure:
 
-- Individual project folders, kept clean
-- Tests grouped by category in separate files
-- User story identifiers embedded in test titles for full traceability
+- Separate folders per project — keeping everything clean and maintainable
+- Tests separated by category — each in their own file
+- User story ID in every test title — full traceability from requirement to test
+
+Simple decisions, but they made the framework intuitive for anyone joining the project.
 
 ![Anti-gravity Claude Code setup](/images/blog/playwright-ai/anti-gravity-claude-code.png)
 
-## The impact: 10x faster
+## The impact: 10x faster!
 
-I reported roughly a tenfold acceleration in test script creation. That speed improvement
-fundamentally changed testing strategy — tasks that were previously too time-consuming became
-practical, enabling consistent automated regression testing after every change while freeing up
-capacity for exploratory testing and edge case discovery.
+Here's the honest truth: AI made me approximately 10 times faster at writing test scripts.
 
-## What I'd change
+Before AI, creating automated test scripts was time-consuming enough that manual testing was often the
+quicker option — at least for user story-level tests. That's a problem, because it means automation
+never reaches its full potential.
 
-Reflecting on the experience: start with AI even earlier. The combination of Playwright and AI is
-mature reality, not a theoretical future capability.
+With AI, that barrier disappeared.
 
-## Conclusion
+Scripts that used to take hours were done in minutes. And because I could create them so quickly, I
+could actually use them — running automated regression checks after every change, catching issues
+early, and freeing up time for what matters most: exploratory testing.
 
-My advice to QA professionals: embrace AI immediately. AI will make you enormously more effective,
-not obsolete. Use AI for everything, stay in the lead, and deliver better quality, faster.
+That's where human expertise truly shines. Finding the unexpected. Testing the edge cases. Challenging
+assumptions. AI gave me the time to do much more of that.
+
+## What I would do differently
+
+Honestly? Not much. Except start with AI even earlier.
+
+The combination of a solid Playwright framework and AI-powered test generation is not a future concept.
+It's a working reality — and it's available now.
+
+## The bottom line
+
+If you're a QA engineer still on the fence about AI: stop hesitating.
+
+AI will not make you obsolete. It will make you enormously more effective. The engineers who embrace
+this now are the ones who will define what quality assurance looks like in the next decade.
+
+Use AI for everything. Stay in the lead. Deliver better quality, faster.
 
 <div className="logo-row">
   <a href="https://playwright.dev/" target="_blank" rel="noopener noreferrer"><img src="/images/blog/playwright-ai/playwright.png" alt="Playwright" /></a>

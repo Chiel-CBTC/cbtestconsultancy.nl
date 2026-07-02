@@ -92,6 +92,10 @@
     @apply max-w-full h-auto border border-surface my-8;
   }
 
+  .prose-dark img.img-zoom {
+    @apply w-full max-w-md;
+  }
+
   .prose-dark .logo-row {
     @apply flex flex-wrap items-center justify-between gap-8 my-8 w-full;
   }
@@ -113,6 +117,6 @@
   }
 
   .prose-dark .logo-stack img {
-    @apply border-0 my-0 h-16 w-auto max-w-full object-contain;
+    @apply border-0 my-0 h-24 w-auto max-w-full object-contain;
   }
 }
