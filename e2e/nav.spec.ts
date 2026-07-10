@@ -12,7 +12,7 @@ test.describe('Navigation', () => {
   test('all five nav links are present', async ({ page }) => {
     const nav = page.getByRole('navigation', { name: 'Primary' })
     await expect(nav.getByRole('link', { name: 'Home' })).toBeVisible()
-    await expect(nav.getByRole('link', { name: 'Portfolio' })).toBeVisible()
+    await expect(nav.getByRole('link', { name: 'Clients' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'About' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'Blog' })).toBeVisible()
     await expect(nav.getByRole('link', { name: 'Contact' })).toBeVisible()
@@ -21,7 +21,7 @@ test.describe('Navigation', () => {
   test('active link highlights current page and sets aria-current', async ({ page }) => {
     await page.goto('/portfolio')
     const nav = page.getByRole('navigation', { name: 'Primary' })
-    const portfolioLink = nav.getByRole('link', { name: 'Portfolio' })
+    const portfolioLink = nav.getByRole('link', { name: 'Clients' })
     await expect(portfolioLink).toHaveClass(/text-accent/)
     await expect(portfolioLink).toHaveAttribute('aria-current', 'page')
   })
@@ -42,7 +42,7 @@ test.describe('Mobile navigation', () => {
   test('desktop link list stays hidden behind a menu toggle', async ({ page }) => {
     const nav = page.getByRole('navigation', { name: 'Primary' })
     await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible()
-    await expect(nav.getByRole('link', { name: 'Portfolio' })).toBeHidden()
+    await expect(nav.getByRole('link', { name: 'Clients' })).toBeHidden()
   })
 
   test('opening the menu reveals all links and marks the toggle expanded', async ({ page }) => {
@@ -51,7 +51,7 @@ test.describe('Mobile navigation', () => {
     await toggle.click()
     await expect(toggle).toHaveAttribute('aria-expanded', 'true')
     const dialog = page.getByRole('dialog')
-    for (const label of ['Home', 'Portfolio', 'About', 'Blog', 'Contact']) {
+    for (const label of ['Home', 'Clients', 'About', 'Blog', 'Contact']) {
       await expect(dialog.getByRole('link', { name: label })).toBeVisible()
     }
   })
@@ -74,7 +74,7 @@ test.describe('Mobile navigation', () => {
   test('clicking a link closes the menu and navigates', async ({ page }) => {
     const toggle = page.getByRole('button', { name: 'Menu' })
     await toggle.click()
-    await page.getByRole('dialog').getByRole('link', { name: 'Portfolio' }).click()
+    await page.getByRole('dialog').getByRole('link', { name: 'Clients' }).click()
     await expect(page).toHaveURL(/\/portfolio$/)
     await expect(page.getByRole('dialog')).toBeHidden()
   })
@@ -82,7 +82,7 @@ test.describe('Mobile navigation', () => {
   test('active page is marked aria-current inside the mobile menu', async ({ page }) => {
     await page.goto('/portfolio')
     await page.getByRole('button', { name: 'Menu' }).click()
-    const activeLink = page.getByRole('dialog').getByRole('link', { name: 'Portfolio' })
+    const activeLink = page.getByRole('dialog').getByRole('link', { name: 'Clients' })
     await expect(activeLink).toHaveAttribute('aria-current', 'page')
   })
 })

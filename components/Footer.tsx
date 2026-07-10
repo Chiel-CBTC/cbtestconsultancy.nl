@@ -15,7 +15,7 @@ export default function Footer() {
         <nav aria-label="Footer" className="flex flex-wrap gap-6 text-sm text-text-muted">
           {[
             { href: '/', label: 'Home' },
-            { href: '/portfolio', label: 'Portfolio' },
+            { href: '/portfolio', label: 'Clients' },
             { href: '/about', label: 'About' },
             { href: '/blog', label: 'Blog' },
             { href: '/contact', label: 'Contact' },

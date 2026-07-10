@@ -43,7 +43,7 @@ test.describe('Navigation smoke tests', () => {
 
   test('nav links navigate correctly', async ({ page }) => {
     await page.goto('/')
-    await page.click('nav >> text=Portfolio')
+    await page.click('nav >> text=Clients')
     await expect(page).toHaveURL('/portfolio')
     await page.click('nav >> text=About')
     await expect(page).toHaveURL('/about')
