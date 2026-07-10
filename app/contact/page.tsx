@@ -18,7 +18,7 @@ export default function ContactPage() {
 
             <div className="flex flex-col gap-10">
               <div>
-                <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Direct contact</p>
+                <p className="font-display font-bold text-text-primary text-sm mb-4">Direct contact</p>
                 <div className="flex flex-col gap-3 text-text-primary text-lg">
                   <a href="mailto:chiel.bleumink@cbtestconsultancy.nl" className="hover:text-accent transition-colors">
                     chiel.bleumink@cbtestconsultancy.nl
@@ -30,23 +30,23 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Location</p>
+                <p className="font-display font-bold text-text-primary text-sm mb-4">Location</p>
                 <p className="text-text-primary text-lg">Arnhem, Netherlands</p>
               </div>
 
               <div>
-                <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Business</p>
+                <p className="font-display font-bold text-text-primary text-sm mb-4">Business</p>
                 <p className="text-text-primary text-lg">KvK 09217715</p>
               </div>
             </div>
           </div>
 
           {/* Right: availability card */}
-          <div className="hidden md:flex flex-col gap-8 pt-4">
+          <div className="flex flex-col gap-8 pt-8 md:pt-4">
             <div className="bg-surface border border-surface p-10 flex flex-col gap-6">
               <div className="flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-accent inline-block" />
-                <span className="font-mono text-accent text-xs tracking-widest uppercase">Available for projects</span>
+                <span className="font-display font-bold text-text-primary text-sm">Available for projects</span>
               </div>
               <p className="text-text-primary text-xl leading-relaxed">
                 Open to new assignments — QA consulting, Playwright automation, and AI-powered testing integrations.
@@ -57,7 +57,7 @@ export default function ContactPage() {
             </div>
 
             <div className="border-t border-surface pt-8">
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Response time</p>
+              <p className="font-display font-bold text-text-primary text-sm mb-4">Response time</p>
               <p className="text-text-muted">Usually within one business day.</p>
             </div>
           </div>

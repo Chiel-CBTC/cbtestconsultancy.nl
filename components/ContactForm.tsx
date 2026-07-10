@@ -92,7 +92,7 @@ export default function ContactForm() {
       </div>
 
       {state === 'error' && (
-        <p className="text-red-400 text-sm">Something went wrong — please try again or email me directly.</p>
+        <p className="text-accent-dim text-sm">Something went wrong — please try again or email me directly.</p>
       )}
 
       <button

@@ -13,10 +13,10 @@ test.describe('Portfolio page', () => {
   })
 
   test('shows sector badges', async ({ page }) => {
-    await expect(page.getByText('Finance')).toBeVisible()
-    await expect(page.getByText('Energy')).toBeVisible()
-    await expect(page.getByText('Retail')).toBeVisible()
-    await expect(page.getByText('Government')).toBeVisible()
+    await expect(page.getByText('Finance', { exact: true })).toBeVisible()
+    await expect(page.getByText('Energy', { exact: true })).toBeVisible()
+    await expect(page.getByText('Retail', { exact: true })).toBeVisible()
+    await expect(page.getByText('Government', { exact: true })).toBeVisible()
   })
 
   test('Rabobank card shows blurb and tags', async ({ page }) => {

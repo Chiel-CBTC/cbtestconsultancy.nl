@@ -37,7 +37,7 @@ export default function AboutPage() {
 
             {/* Certs */}
             <div>
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Certifications</p>
+              <p className="font-display font-bold text-text-primary text-sm mb-4">Certifications</p>
               <div className="flex flex-wrap gap-3">
                 {certs.map(({ name, abbr }) => (
                   <div
@@ -78,7 +78,7 @@ export default function AboutPage() {
 
             {/* Skills */}
             <div>
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-6">Skills &amp; tooling</p>
+              <p className="font-display font-bold text-text-primary text-sm mb-6">Skills &amp; tooling</p>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <span
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
             {/* Education */}
             <div>
-              <p className="font-mono text-accent text-xs tracking-widest uppercase mb-4">Education</p>
+              <p className="font-display font-bold text-text-primary text-sm mb-4">Education</p>
               <p className="text-text-muted">HTS Technical Computer Science</p>
             </div>
           </div>
