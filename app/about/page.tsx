@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
@@ -21,18 +22,14 @@ const certs = [
 export default function AboutPage() {
   return (
     <>
-      <PageHeader title="Chiel Bleumink" subtitle="Senior QA consultant — 17+ years in finance, retail, energy, and government." />
+      <PageHeader title="Chiel Bleumink" subtitle="Senior QA Consultant" />
       <div className="bg-background pb-24">
-        <div className="max-w-7xl mx-auto px-6 pt-16">
-        <div className="grid md:grid-cols-2 gap-20 items-start">
+        <div className="max-w-7xl mx-auto px-6 pt-8 md:pt-16">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Photo column */}
           <div className="flex flex-col gap-8">
-            <div className="aspect-square bg-surface border border-surface flex items-center justify-center max-w-sm">
-              {/* Replace with: <Image src="/images/chiel.jpg" alt="Chiel Bleumink" fill className="object-cover" /> */}
-              <div className="flex flex-col items-center gap-4 text-text-muted">
-                <div className="w-24 h-24 rounded-full border-2 border-accent opacity-30" />
-                <span className="font-mono text-xs tracking-widest">Photo coming soon</span>
-              </div>
+            <div className="relative aspect-[3/4] max-w-sm overflow-hidden bg-surface">
+              <Image src="/images/chiel.jpg" alt="Chiel Bleumink" fill className="object-contain object-top" />
             </div>
 
             {/* Certs */}
@@ -56,19 +53,20 @@ export default function AboutPage() {
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-5 text-text-primary text-lg leading-relaxed">
               <p>
-                I&apos;m a senior QA consultant based in Arnhem, Netherlands, with 17+ years of
-                experience across finance, retail, energy, and government sectors.
+                I&apos;m a senior Quality Assurance consultant based in Arnhem, Netherlands, with 17+ years of
+                experience helping organizations deliver quality digital products across finance,
+                retail, energy, and government sectors.
               </p>
               <p>
-                I specialize in Playwright-based test automation, helping teams move from
-                manual regression cycles to fast, reliable CI/CD pipelines. I work hands-on
-                with developers, UX designers, and business stakeholders to make quality
-                everyone&apos;s responsibility.
+                I specialize in Playwright and TypeScript-based test automation, helping teams
+                move from manual regression cycles to fast, reliable CI/CD pipelines. Beyond
+                the technical work, I develop test strategies for complex initiatives, support
+                DevOps transitions, and coordinate across developers, UX designers, and business
+                stakeholders — building trust through communication and partnership.
               </p>
               <p>
-                More recently I&apos;ve been integrating AI — Claude, GitHub Copilot, OpenCode —
-                into testing workflows to generate smarter test cases, triage failures faster,
-                and reduce maintenance overhead.
+                More recently I&apos;ve been integrating AI into testing workflows to generate
+                smarter test cases, triage failures faster, and reduce maintenance overhead.
               </p>
               <p>
                 I hold an ISTQB Foundation certification and a PSM1 Scrum Master credential,

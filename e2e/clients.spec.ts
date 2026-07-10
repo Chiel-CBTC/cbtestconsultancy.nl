@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test'
 
-test.describe('Portfolio page', () => {
+test.describe('Clients page', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/portfolio')
+    await page.goto('/clients')
   })
 
   test('shows all six client cards', async ({ page }) => {
-    const clients = ['Rabobank', 'TenneT', 'Action', 'Europarcs', 'Gadero', 'Provincie Gelderland']
+    const clients = ['Zwijsen', 'Rabobank', 'TenneT', 'Action', 'Europarcs', 'Provincie Gelderland']
     for (const client of clients) {
       await expect(page.getByRole('heading', { name: client })).toBeVisible()
     }
@@ -17,15 +17,16 @@ test.describe('Portfolio page', () => {
     await expect(page.getByText('Energy', { exact: true })).toBeVisible()
     await expect(page.getByText('Retail', { exact: true })).toBeVisible()
     await expect(page.getByText('Government', { exact: true })).toBeVisible()
+    await expect(page.getByText('Education', { exact: true })).toBeVisible()
   })
 
   test('Rabobank card shows blurb and tags', async ({ page }) => {
-    await expect(page.getByText(/reducing regression cycles/i)).toBeVisible()
-    await expect(page.getByText('Playwright').first()).toBeVisible()
-    await expect(page.getByText('Azure DevOps')).toBeVisible()
+    await expect(page.getByText(/test strategy and execution/i)).toBeVisible()
+    await expect(page.getByText('Selenium').first()).toBeVisible()
+    await expect(page.getByText('Performance Testing')).toBeVisible()
   })
 
-  test('Provincie Gelderland card mentions accessibility', async ({ page }) => {
-    await expect(page.getByText(/WCAG accessibility/i)).toBeVisible()
+  test('Provincie Gelderland card mentions DevOps transition', async ({ page }) => {
+    await expect(page.getByText(/QA lead within government development teams/i)).toBeVisible()
   })
 })

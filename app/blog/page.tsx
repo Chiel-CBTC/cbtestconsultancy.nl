@@ -5,7 +5,7 @@ import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'QA insights, Playwright patterns, and AI testing strategies from Chiel Bleumink.',
+  description: 'QA insights, Playwright patterns, and AI automation from Chiel Bleumink.',
 }
 
 export default function BlogPage() {
@@ -13,9 +13,9 @@ export default function BlogPage() {
 
   return (
     <>
-      <PageHeader title="Thoughts on QA" subtitle="QA insights, Playwright patterns, and AI testing strategies." />
+      <PageHeader title="Thoughts on QA" subtitle="QA insights, Playwright patterns, and AI automation." />
       <div className="bg-background pb-24">
-        <div className="max-w-3xl mx-auto px-6 pt-16">
+        <div className="max-w-7xl mx-auto px-6 pt-16">
         {posts.length === 0 ? (
           <p className="text-text-muted text-xl">Posts coming soon.</p>
         ) : (

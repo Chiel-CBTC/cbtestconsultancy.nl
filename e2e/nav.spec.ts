@@ -19,11 +19,11 @@ test.describe('Navigation', () => {
   })
 
   test('active link highlights current page and sets aria-current', async ({ page }) => {
-    await page.goto('/portfolio')
+    await page.goto('/clients')
     const nav = page.getByRole('navigation', { name: 'Primary' })
-    const portfolioLink = nav.getByRole('link', { name: 'Clients' })
-    await expect(portfolioLink).toHaveClass(/text-accent/)
-    await expect(portfolioLink).toHaveAttribute('aria-current', 'page')
+    const clientsLink = nav.getByRole('link', { name: 'Clients' })
+    await expect(clientsLink).toHaveClass(/text-accent/)
+    await expect(clientsLink).toHaveAttribute('aria-current', 'page')
   })
 
   test('header and footer navigation landmarks have distinct accessible names', async ({ page }) => {
@@ -75,12 +75,12 @@ test.describe('Mobile navigation', () => {
     const toggle = page.getByRole('button', { name: 'Menu' })
     await toggle.click()
     await page.getByRole('dialog').getByRole('link', { name: 'Clients' }).click()
-    await expect(page).toHaveURL(/\/portfolio$/)
+    await expect(page).toHaveURL(/\/clients$/)
     await expect(page.getByRole('dialog')).toBeHidden()
   })
 
   test('active page is marked aria-current inside the mobile menu', async ({ page }) => {
-    await page.goto('/portfolio')
+    await page.goto('/clients')
     await page.getByRole('button', { name: 'Menu' }).click()
     const activeLink = page.getByRole('dialog').getByRole('link', { name: 'Clients' })
     await expect(activeLink).toHaveAttribute('aria-current', 'page')

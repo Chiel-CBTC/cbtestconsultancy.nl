@@ -87,4 +87,36 @@
   .prose-dark :not(pre) > code {
     @apply bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono;
   }
+
+  .prose-dark img {
+    @apply max-w-full h-auto border border-surface my-8;
+  }
+
+  .prose-dark img.img-zoom {
+    @apply w-full max-w-md;
+  }
+
+  .prose-dark .logo-row {
+    @apply flex flex-wrap items-center justify-between gap-8 my-8 w-full;
+  }
+
+  .prose-dark .logo-row img {
+    @apply border-0 my-0 h-20 w-auto max-w-full object-contain;
+  }
+
+  .prose-dark .split-row {
+    @apply grid md:grid-cols-[2fr_1fr] gap-8 md:gap-12 items-center my-8;
+  }
+
+  .prose-dark .split-row > div:first-child p:last-child {
+    @apply mb-0;
+  }
+
+  .prose-dark .logo-stack {
+    @apply flex flex-row md:flex-col items-center justify-center gap-8 flex-wrap;
+  }
+
+  .prose-dark .logo-stack img {
+    @apply border-0 my-0 h-24 w-auto max-w-full object-contain;
+  }
 }

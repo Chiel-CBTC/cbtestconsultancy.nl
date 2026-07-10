@@ -5,9 +5,8 @@ import Link from 'next/link'
 
 const AgileIcon = () => (
   <svg width="56" height="56" viewBox="0 0 28 28" fill="none" aria-hidden>
-    <path d="M14 4C8.477 4 4 8.477 4 14s4.477 10 10 10 10-4.477 10-10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M20 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M10 14l3 3 5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.5"/>
+    <path d="M9 14l3 3 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
@@ -47,7 +46,7 @@ const services = [
     icon: <AIIcon />,
     title: 'AI-Powered Testing',
     description:
-      'Smarter test coverage through AI-assisted generation, intelligent failure triage, and OpenAI / Claude integrations in your pipeline.',
+      'Smarter test coverage through AI-assisted generation, intelligent failure triage, and OpenAI / Claude integrations.',
   },
 ]
 
@@ -59,8 +58,8 @@ export default function HomePage() {
       {/* Service pillars */}
       <section className="bg-background py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display font-bold text-text-primary text-4xl md:text-5xl mb-16 max-w-2xl text-balance">
-            Quality baked in, not bolted on.
+          <h2 className="font-display font-bold text-text-primary text-4xl md:text-5xl mb-16 md:whitespace-nowrap">
+            Quality baked in, not bolted on
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((s) => (

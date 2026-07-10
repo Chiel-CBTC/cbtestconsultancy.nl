@@ -29,12 +29,12 @@ test.describe('Home page', () => {
 
   test.describe('ClientLogoStrip', () => {
     test('shows all six client names', async ({ page }) => {
-      await expect(page.getByText('Rabobank', { exact: true })).toBeVisible()
-      await expect(page.getByText('TenneT', { exact: true })).toBeVisible()
-      await expect(page.getByText('Action', { exact: true })).toBeVisible()
-      await expect(page.getByText('Europarcs', { exact: true })).toBeVisible()
-      await expect(page.getByText('Gadero', { exact: true })).toBeVisible()
-      await expect(page.getByText('Provincie Gelderland', { exact: true })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'Rabobank' })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'TenneT' })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'Action' })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'Europarcs' })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'Zwijsen' })).toBeVisible()
+      await expect(page.getByRole('link', { name: 'Provincie Gelderland' })).toBeVisible()
     })
   })
 

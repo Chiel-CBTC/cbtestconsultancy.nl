@@ -10,7 +10,7 @@ test.describe('Contact page', () => {
   })
 
   test('shows email and phone links', async ({ page }) => {
-    await expect(page.getByRole('link', { name: /chiel.bleumink@cbtestconsultancy.nl/i })).toBeVisible()
+    await expect(page.getByRole('link', { name: /chiel@cbtestconsultancy.nl/i })).toBeVisible()
     await expect(page.getByRole('link', { name: /\+31/ })).toBeVisible()
   })
 
@@ -21,8 +21,8 @@ test.describe('Contact page', () => {
   })
 
   test('shows availability card', async ({ page }) => {
-    await expect(page.getByText(/Available for projects/i)).toBeVisible()
-    await expect(page.getByText(/Open to new assignments/i)).toBeVisible()
+    await expect(page.getByText(/Currently on assignment/i)).toBeVisible()
+    await expect(page.getByText(/Available for small, focused engagements/i)).toBeVisible()
   })
 })
 
@@ -31,7 +31,7 @@ test.describe('Contact page — mobile', () => {
 
   test('availability card is not hidden from mobile visitors', async ({ page }) => {
     await page.goto('/contact')
-    await expect(page.getByText(/Available for projects/i)).toBeVisible()
-    await expect(page.getByText(/Open to new assignments/i)).toBeVisible()
+    await expect(page.getByText(/Currently on assignment/i)).toBeVisible()
+    await expect(page.getByText(/Available for small, focused engagements/i)).toBeVisible()
   })
 })

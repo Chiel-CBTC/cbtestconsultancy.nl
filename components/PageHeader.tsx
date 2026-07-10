@@ -15,8 +15,8 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1 }}
-        animate={{ scale: reduced ? 1 : 1.08 }}
-        transition={{ duration: reduced ? 0 : 12, ease: 'linear' }}
+        animate={{ scale: reduced ? 1 : 1.15 }}
+        transition={{ duration: reduced ? 0 : 8, ease: 'linear' }}
       >
         <Image
           src="/images/poster-2.avif"
@@ -35,7 +35,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
         }}
       />
       <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
-        <h1 className="font-display font-bold text-white text-5xl md:text-6xl leading-tight text-balance">
+        <h1 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance">
           {title}
         </h1>
         {subtitle && (

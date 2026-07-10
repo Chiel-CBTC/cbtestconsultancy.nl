@@ -12,8 +12,8 @@ export default function Hero() {
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1 }}
-        animate={{ scale: reduced ? 1 : 1.08 }}
-        transition={{ duration: reduced ? 0 : 12, ease: 'linear' }}
+        animate={{ scale: reduced ? 1 : 1.15 }}
+        transition={{ duration: reduced ? 0 : 8, ease: 'linear' }}
       >
         <Image
           src="/images/poster-2.avif"
@@ -42,14 +42,13 @@ export default function Hero() {
           <p className="font-mono text-accent text-xs tracking-[0.25em] uppercase mb-8">
             QA Consulting · Playwright · AI Testing
           </p>
-          <h1 className="font-display font-bold text-white text-6xl md:text-7xl leading-[1.05] mb-8 text-balance">
+          <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8 text-balance">
             Testing at the{' '}
             <span className="text-accent">speed</span>{' '}
-            of modern teams.
+            of modern teams
           </h1>
           <p className="text-white/70 text-xl leading-relaxed mb-10 max-w-lg">
-            17+ years helping finance, retail, energy, and government teams ship
-            flawless digital products.
+            17+ years of experience supporting finance, retail, energy and government teams shipping flawless digital products
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -59,7 +58,7 @@ export default function Hero() {
               Let&apos;s talk →
             </Link>
             <Link
-              href="/portfolio"
+              href="/clients"
               className="inline-block border border-white text-white px-8 py-4 font-semibold text-lg hover:bg-white/20 transition-colors text-center"
             >
               View work
