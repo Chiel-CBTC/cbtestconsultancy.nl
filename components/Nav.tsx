@@ -27,7 +27,13 @@ export default function Nav() {
     if (!isOpen) return
 
     document.body.style.overflow = 'hidden'
-    firstLinkRef.current?.focus()
+
+    const link = firstLinkRef.current
+    if (link) {
+      link.dataset.autofocus = 'true'
+      link.focus()
+      link.addEventListener('blur', () => delete link.dataset.autofocus, { once: true })
+    }
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -119,7 +125,7 @@ export default function Nav() {
                         href={href}
                         aria-current={isActive ? 'page' : undefined}
                         onClick={() => setIsOpen(false)}
-                        className={`flex items-center min-h-14 text-lg font-display font-semibold transition-colors ${
+                        className={`flex items-center min-h-14 text-lg font-display font-semibold transition-colors outline-none data-[autofocus]:!outline-none data-[autofocus]:!ring-0 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                           isActive ? 'text-accent' : 'text-text-primary hover:text-accent'
                         }`}
                       >
